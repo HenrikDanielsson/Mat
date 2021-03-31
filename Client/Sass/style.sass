@@ -1,0 +1,158 @@
+@use '_spacinghelper'
+@use 'reset'
+@keyframes slide-1
+    0%
+        opacity: 100%
+    80%
+        opacity: 100%
+    100%
+        opacity: 0%
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+a
+    color: #333
+
+    &:hover
+        color: pink
+
+body
+    font-family: Arial, Helvetica, sans-serif
+    color: #333
+
+h1,h2
+    font-family: 'Yanone Kaffeesatz', sans-serif
+
+h1
+    font-size: 2rem
+
+.vecka
+    color: pink
+    font-size: 2.9em
+    align-content: baseline
+
+.--flex
+    display: flex
+
+header
+    max-width: 1024px
+    width: 80%
+    margin-inline: auto
+
+.dagar, .info
+    width: 80%
+    margin-inline: auto
+    font-size: 2rem
+    flex-wrap: wrap
+    justify-content: center
+    align-content: center
+    @media screen and (max-width: 992px)
+        width: 100%
+
+.column1, .column2
+    display: flex
+    width: 50%
+    flex-wrap: wrap
+    @media screen and (max-width: 992px)
+        width: 100%
+        justify-content: center
+
+#info
+    display: flex
+    width: 100%
+    position: relative
+
+    & .edit-bar
+        font-size: 0.75rem
+        font-family: Arial, Helvetica, sans-serif
+        position: absolute
+        right: 1rem
+
+.dag, .mat, #info
+    width: 100%
+    font-size: 1.5rem
+    box-shadow: 1px 2px 5px #ccc
+
+    border-radius: 10px
+    @media screen and (max-width: 992px)
+        width: 80%
+
+    & > h2
+        pointer-events: none
+        cursor: pointer
+        font-size: 1rem
+        text-align: left
+        margin-bottom: .75rem
+
+    & > h3
+        pointer-events: none
+        cursor: pointer
+
+    & > p
+        font-size: 1rem
+
+    & > .selected
+        animation: slide-1 2 forwards
+
+#success
+    font-size: 8rem
+    opacity: 0%
+    display: block
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    pointer-events: none
+
+.fade
+    animation: slide-1 2s forwards
+
+#info
+    display: none
+
+.ingridient
+    position: relative
+
+.ingredientEditeble
+    cursor: context-menu
+
+.ingredientEditeble:after
+    content: ' '
+
+#acDiv
+    position: absolute
+    display: none
+    font-size: 1.5rem
+    color: #ccc
+    z-index: -1
+
+#addIngridients
+
+    display: none
+
+    .ingredientEditeble
+        position: relative
+
+    & label
+        font-size: 1rem
+        font-weight: 400
+        text-align: left
+        display: block
+        margin-bottom: .75rem
+    & button
+        padding: .25rem 1rem
+
+    & input
+        font-size: 1rem
+        width: 100%
+        padding: 0.25rem
+        font-family: Arial, Helvetica, sans-serif
+        border-radius: 3px
+        border: 1px solid #ccc
+
+        &:focus
+            box-shadow: 2px 2px 5px #333
+            border: 1px solid #333

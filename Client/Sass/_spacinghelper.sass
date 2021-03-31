@@ -1,0 +1,21 @@
+$sidelist: ('':'', 'l':'-left', 'r':'-right', 't':'-top', 'b':'-bottom', 'y':'-block', 'x':'-inline')
+$types: ('m': 'margin', 'p': 'padding')
+
+$static: ('0': 0,'xxs': .3,'xs': .625,'s': 1,'m': 2,'l': 3,'xl': 5)
+$phone: ('0': 0,'xs': .5,'s': .75,'m': 1,'l': 2,'xl': 3)
+$tablet-portrait: ('0': 0,'xs': .625,'s': 1,'m': 2,'l': 3,'xl': 5)
+$tablet-landscape-up: $static
+$desktop-up: $static
+
+$sizes: ('min-width: 1px':$static,'max-width: 599px':$phone,'min-width: 600px':$tablet-portrait)
+
+$show: 's'
+
+@each $media, $values in $sizes
+  @media screen and (#{$media})
+      @each $type1, $type2 in $types
+        @each $side1, $side2 in $sidelist 
+          @each $size-key, $size-value in $values
+            .--#{$show}-#{$type1}#{$side1}-#{$size-key}
+              #{$type2}#{$side2}: #{$size-value}rem 
+  $show: 'r'

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="se">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Yanone+Kaffeesatz:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>Mat</title>
+  </head>
+  <body>
+    <div id="acDiv"></div>
+    <header class="--flex --r-p-m">
+      <span class="vecka --r-mr-s">🍔</span>
+      <section class="--s-mt-xs">
+        <h1>Veckans matlista!</h1>
+        <p>
+          Ät och hållkäft eller nått.
+        </p>
+        <navigation>
+          <ul>
+            <li><a onclick="newWeeks();">Ny vecka</a></li>
+            <li>Att handla</li>
+            <li>Ny mat</li>
+          </ul>
+        </navigation>
+      </section>
+    </header>
+    <main class="dagar --flex"></main>
+    <section class="info --flex">
+      <div id="info" class="--r-p-s --r-m-xs">
+        <h2>RECEPT OCH SKIT:</h2>
+        <section id="info-fridge" class="--s-px-m"></section>
+        <p class="--r-px-m --r-mb-x --r-mt-xs">Lägg till ingridiens.</p>
+        <p id="info-desc" class="--r-p-m">Hej Hej</p>
+      </div>
+    </section>
+    <footer>
+      <button class="save" onclick="saveWeeks()">Spara lista.</button>
+    </footer>
+    <div id="success">👍🏻</div>
+  </body>
+</html>
